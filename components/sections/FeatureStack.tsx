@@ -76,7 +76,7 @@ function FeatureRow({ feature, index }: { feature: Feature; index: number }) {
         whileInView={{ color: feature.color, x: 0 }}
         viewport={{ amount: 0.6, margin: "-20% 0px -20% 0px" }}
         transition={{ duration: 0.5, ease: easeOut }}
-        className="font-display font-bold uppercase leading-[0.9] tracking-[-0.02em] text-[16vw] md:text-[10vw] lg:text-[140px]"
+        className="font-display font-bold uppercase leading-[0.9] tracking-[-0.02em] text-[11vw] md:text-[6.5vw] lg:text-[88px]"
         style={{ order: bubbleSide === "right" ? 1 : 2 }}
       >
         {feature.word}

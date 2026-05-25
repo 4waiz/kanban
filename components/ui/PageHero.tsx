@@ -23,7 +23,7 @@ export default function PageHero({ eyebrow, title, intro }: PageHeroProps) {
           className="flex flex-col gap-6"
         >
           <MonoLabel>{eyebrow}</MonoLabel>
-          <h1 className="font-display font-bold uppercase leading-[0.88] tracking-[-0.02em] text-kanban-text text-[14vw] md:text-[10vw] lg:text-[140px]">
+          <h1 className="font-display font-bold uppercase leading-[0.88] tracking-[-0.02em] text-kanban-text text-[11vw] md:text-[7vw] lg:text-[88px]">
             {title}
           </h1>
           {intro && (

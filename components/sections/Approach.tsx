@@ -124,7 +124,7 @@ function StepRow({ step, index }: { step: Step; index: number }) {
           whileInView={{ color: step.color }}
           viewport={{ amount: 0.6, margin: "-20% 0px -20% 0px" }}
           transition={{ duration: 0.5, ease: easeOut }}
-          className="font-display font-bold uppercase leading-[0.9] tracking-[-0.02em] text-[16vw] md:text-[10vw] lg:text-[140px]"
+          className="font-display font-bold uppercase leading-[0.9] tracking-[-0.02em] text-[11vw] md:text-[6.5vw] lg:text-[88px]"
         >
           {step.word}
         </motion.span>
