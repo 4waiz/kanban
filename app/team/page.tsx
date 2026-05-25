@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import GlassCard from "@/components/ui/GlassCard";
 import MonoLabel from "@/components/ui/MonoLabel";
+import Reveal from "@/components/ui/Reveal";
 import CTA from "@/components/sections/CTA";
 
 export const metadata: Metadata = {
@@ -52,30 +53,32 @@ export default function TeamPage() {
       {/* founders */}
       <section className="px-8 py-12">
         <div className="mx-auto grid max-w-360 grid-cols-1 gap-6 md:grid-cols-2">
-          {FOUNDERS.map((f) => (
-            <GlassCard key={f.name} className="flex flex-col gap-6 p-10">
-              <div>
-                <h2 className="font-display text-4xl font-semibold tracking-tight text-kanban-text">
-                  {f.name}
-                </h2>
-                <MonoLabel className="mt-3 text-kanban-violet-soft">{f.role}</MonoLabel>
-              </div>
-              <div className="flex flex-col gap-4 text-base leading-relaxed text-kanban-text/70">
-                {f.bio.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
-              <div className="mt-auto flex flex-wrap gap-2 border-t border-white/5 pt-6">
-                {f.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-kanban-text/65"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </GlassCard>
+          {FOUNDERS.map((f, i) => (
+            <Reveal key={f.name} index={i}>
+              <GlassCard interactive className="flex h-full flex-col gap-6 p-10">
+                <div>
+                  <h2 className="font-display text-4xl font-semibold tracking-tight text-kanban-text">
+                    {f.name}
+                  </h2>
+                  <MonoLabel className="mt-3 text-kanban-violet-soft">{f.role}</MonoLabel>
+                </div>
+                <div className="flex flex-col gap-4 text-base leading-relaxed text-kanban-text/70">
+                  {f.bio.map((p, j) => (
+                    <p key={j}>{p}</p>
+                  ))}
+                </div>
+                <div className="mt-auto flex flex-wrap gap-2 border-t border-white/5 pt-6">
+                  {f.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-kanban-text/65 transition-colors hover:border-kanban-violet/30 hover:bg-white/10 hover:text-kanban-violet-soft"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </GlassCard>
+            </Reveal>
           ))}
         </div>
       </section>

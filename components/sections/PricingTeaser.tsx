@@ -59,6 +59,7 @@ export default function PricingTeaser() {
               transition={{ duration: 0.7, ease: easeOut, delay: i * 0.1 }}
             >
               <GlassCard
+                interactive
                 className={
                   t.featured
                     ? "flex h-full flex-col gap-6 p-8 ring-1 ring-kanban-violet/40 shadow-[0_0_80px_-20px_rgba(123,91,255,0.4)]"

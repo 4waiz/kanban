@@ -25,6 +25,53 @@ body {
   min-height: 100vh;
 }
 
+/*
+  Tech words radiating from the orb. Each word reads its direction off a CSS
+  variable --angle (set inline per word). The keyframe interpolates a translate
+  along that angle while fading opacity and scale.
+*/
+@keyframes orb-emit {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%)
+      rotate(var(--angle)) translateX(0)
+      rotate(calc(var(--angle) * -1)) scale(0.7);
+  }
+  20% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%)
+      rotate(var(--angle)) translateX(var(--distance, 320px))
+      rotate(calc(var(--angle) * -1)) scale(1);
+  }
+}
+
+/* Terminal-style cursor blink used in the InitializeCore boot overlay. */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.orb-word {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: orb-emit var(--duration, 5s) cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  animation-delay: var(--delay, 0s);
+  will-change: transform, opacity;
+}
+
 /* Subtle film-grain overlay — inlined SVG noise, fixed across the viewport. */
 body::before {
   content: "";

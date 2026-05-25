@@ -1,15 +1,18 @@
 "use client";
 
 // TODO: headline currently uses Space Grotesk Bold as a stand-in for Neue Machina.
+import { useState } from "react";
 import { motion } from "framer-motion";
 import GlassCard from "@/components/ui/GlassCard";
 import GlassShard3D from "@/components/ui/GlassShard3D";
 import MonoLabel from "@/components/ui/MonoLabel";
 import PillButton from "@/components/ui/PillButton";
+import InitializeCoreOverlay from "@/components/ui/InitializeCoreOverlay";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
+  const [coreOpen, setCoreOpen] = useState(false);
   return (
     <section className="relative w-full overflow-hidden">
       <div className="mx-auto grid max-w-360 grid-cols-1 items-center gap-12 px-6 pt-44 pb-32 md:grid-cols-[1.2fr_1fr] md:gap-10 md:px-8 md:pt-48 lg:gap-16">
@@ -46,7 +49,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: easeOut, delay: 0.65 }}
           >
-            <PillButton variant="light">Initialize core</PillButton>
+            <PillButton variant="light" onClick={() => setCoreOpen(true)}>
+              Initialize core
+            </PillButton>
           </motion.div>
         </div>
 
@@ -57,9 +62,11 @@ export default function Hero() {
           transition={{ duration: 1.1, ease: easeOut, delay: 0.2 }}
           className="relative grid w-full place-items-center"
         >
-          <GlassShard3D size={560} variant="crystal" speed={0.7} />
+          <GlassShard3D size={560} variant="spiky" speed={0.7} />
         </motion.div>
       </div>
+
+      <InitializeCoreOverlay open={coreOpen} onClose={() => setCoreOpen(false)} />
     </section>
   );
 }

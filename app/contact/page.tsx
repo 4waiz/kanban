@@ -123,7 +123,7 @@ export default function ContactPage() {
           {/* channels */}
           <div className="flex flex-col gap-6">
             {CHANNELS.map((c) => (
-              <GlassCard key={c.label} className="flex flex-col gap-3 p-7">
+              <GlassCard key={c.label} interactive className="flex flex-col gap-3 p-7">
                 <MonoLabel className="text-kanban-text/45">{c.label}</MonoLabel>
                 <a
                   href={c.href}

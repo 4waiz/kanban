@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import GlassCard from "@/components/ui/GlassCard";
 import MonoLabel from "@/components/ui/MonoLabel";
+import Reveal from "@/components/ui/Reveal";
 import CTA from "@/components/sections/CTA";
 
 export const metadata: Metadata = {
@@ -84,27 +85,31 @@ export default function AboutPage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <GlassCard className="flex flex-col gap-5 p-10">
-              <MonoLabel className="text-kanban-violet-soft">Kanban Systems</MonoLabel>
-              <h3 className="font-display text-3xl font-semibold tracking-tight text-kanban-text">
-                The client-work engine.
-              </h3>
-              <p className="text-base leading-relaxed text-kanban-text/65">
-                Custom builds, retainers, and accelerator deployments. This is where the revenue
-                comes from.
-              </p>
-            </GlassCard>
-            <GlassCard className="flex flex-col gap-5 p-10">
-              <MonoLabel className="text-kanban-violet-soft">Kanban Labs</MonoLabel>
-              <h3 className="font-display text-3xl font-semibold tracking-tight text-kanban-text">
-                The R&amp;D arm.
-              </h3>
-              <p className="text-base leading-relaxed text-kanban-text/65">
-                Experimental prototypes, research collaborations with universities, hackathon
-                builds, and open-source contributions. Where credibility, talent, and future
-                product seeds come from.
-              </p>
-            </GlassCard>
+            <Reveal index={0}>
+              <GlassCard interactive className="flex h-full flex-col gap-5 p-10">
+                <MonoLabel className="text-kanban-violet-soft">Kanban Systems</MonoLabel>
+                <h3 className="font-display text-3xl font-semibold tracking-tight text-kanban-text">
+                  The client-work engine.
+                </h3>
+                <p className="text-base leading-relaxed text-kanban-text/65">
+                  Custom builds, retainers, and accelerator deployments. This is where the revenue
+                  comes from.
+                </p>
+              </GlassCard>
+            </Reveal>
+            <Reveal index={1}>
+              <GlassCard interactive className="flex h-full flex-col gap-5 p-10">
+                <MonoLabel className="text-kanban-violet-soft">Kanban Labs</MonoLabel>
+                <h3 className="font-display text-3xl font-semibold tracking-tight text-kanban-text">
+                  The R&amp;D arm.
+                </h3>
+                <p className="text-base leading-relaxed text-kanban-text/65">
+                  Experimental prototypes, research collaborations with universities, hackathon
+                  builds, and open-source contributions. Where credibility, talent, and future
+                  product seeds come from.
+                </p>
+              </GlassCard>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -120,13 +125,15 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {FORCES.map((f, i) => (
-              <GlassCard key={f.title} className="flex flex-col gap-4 p-8">
-                <MonoLabel className="text-kanban-text/40">0{i + 1}</MonoLabel>
-                <h3 className="font-display text-xl font-semibold tracking-tight text-kanban-text">
-                  {f.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-kanban-text/65">{f.body}</p>
-              </GlassCard>
+              <Reveal key={f.title} index={i}>
+                <GlassCard interactive className="flex h-full flex-col gap-4 p-8">
+                  <MonoLabel className="text-kanban-text/40">0{i + 1}</MonoLabel>
+                  <h3 className="font-display text-xl font-semibold tracking-tight text-kanban-text">
+                    {f.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-kanban-text/65">{f.body}</p>
+                </GlassCard>
+              </Reveal>
             ))}
           </div>
         </div>

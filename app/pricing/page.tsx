@@ -90,6 +90,7 @@ export default function PricingPage() {
             {TIERS.map((t) => (
               <GlassCard
                 key={t.name}
+                interactive
                 className={
                   t.featured
                     ? "flex flex-col gap-7 p-8 ring-1 ring-kanban-violet/40 shadow-[0_0_80px_-20px_rgba(123,91,255,0.4)]"
@@ -149,7 +150,7 @@ export default function PricingPage() {
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {ACCELERATORS.map((a) => (
-              <GlassCard key={a.name} className="flex flex-col gap-4 p-7">
+              <GlassCard key={a.name} interactive className="flex flex-col gap-4 p-7">
                 <h3 className="font-display text-xl font-semibold tracking-tight text-kanban-text">
                   {a.name}
                 </h3>

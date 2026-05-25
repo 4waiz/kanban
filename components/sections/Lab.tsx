@@ -66,7 +66,7 @@ export default function Lab({ compact = false }: LabProps) {
               transition={{ duration: 0.7, ease: easeOut, delay: i * 0.08 }}
               whileHover={{ y: -4 }}
             >
-              <GlassCard className="flex h-full flex-col gap-4 p-7 transition-colors hover:border-white/20 hover:bg-white/5">
+              <GlassCard interactive className="flex h-full flex-col gap-4 p-7">
                 <div className="flex items-center justify-between gap-3">
                   <MonoLabel className="text-kanban-text/35">[{e.auth}]</MonoLabel>
                   <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-kanban-violet-soft">

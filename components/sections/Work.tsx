@@ -83,7 +83,7 @@ export default function Work({ compact = false }: WorkProps) {
               transition={{ duration: 0.7, ease: easeOut, delay: i * 0.08 }}
               whileHover={{ y: -4 }}
             >
-              <GlassCard className="p-7 transition-colors hover:border-white/20 hover:bg-white/5">
+              <GlassCard interactive className="p-7">
                 <div className="flex flex-col gap-3">
                   <MonoLabel>
                     {p.category} <span className="text-kanban-text/30 mx-1">/</span>{" "}

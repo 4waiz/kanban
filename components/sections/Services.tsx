@@ -84,7 +84,7 @@ export default function Services({ compact = false }: ServicesProps) {
               transition={{ duration: 0.7, ease: easeOut, delay: i * 0.06 }}
               whileHover={{ y: -4 }}
             >
-              <GlassCard className="flex h-full flex-col gap-5 p-8 transition-colors hover:border-white/20 hover:bg-white/5">
+              <GlassCard interactive className="flex h-full flex-col gap-5 p-8">
                 <div className="flex items-center justify-between">
                   <MonoLabel className="text-kanban-text/40">{s.n}</MonoLabel>
                   <span className="h-1.5 w-1.5 rounded-full bg-kanban-violet shadow-[0_0_12px_rgba(123,91,255,0.8)]" />
@@ -109,7 +109,7 @@ export default function Services({ compact = false }: ServicesProps) {
             whileHover={{ y: -4 }}
           >
             <Link href="/contact" className="block h-full">
-              <GlassCard className="flex h-full flex-col gap-5 p-8 ring-1 ring-kanban-violet/30 transition-colors hover:bg-white/5">
+              <GlassCard interactive className="flex h-full flex-col gap-5 p-8 ring-1 ring-kanban-violet/30">
                 <div className="flex items-center justify-between">
                   <MonoLabel className="text-kanban-violet-soft">06</MonoLabel>
                   <span className="h-1.5 w-1.5 rounded-full bg-kanban-violet-soft shadow-[0_0_12px_rgba(196,181,253,0.9)]" />
