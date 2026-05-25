@@ -49,17 +49,14 @@ export default function Footer() {
         {/* big logo + tagline */}
         <div className="grid gap-12 md:grid-cols-[2fr_3fr] md:gap-20">
           <div>
-            <Link href="/" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center" aria-label="Kanban Studios — home">
               <Image
-                src="/logo.png"
+                src="/logo.svg"
                 alt="Kanban Studios"
-                width={40}
-                height={40}
-                className="h-10 w-10 object-contain"
+                width={320}
+                height={64}
+                className="h-16 w-auto object-contain"
               />
-              <span className="font-display text-2xl font-semibold tracking-tight text-kanban-text">
-                Kanban Studios
-              </span>
             </Link>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-kanban-text/55">
               Mission-critical AI software for regulated and high-stakes environments. Designed in the UAE.

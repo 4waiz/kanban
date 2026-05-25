@@ -33,7 +33,11 @@ const STEPS = [
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
-export default function Approach() {
+interface ApproachProps {
+  compact?: boolean;
+}
+
+export default function Approach({ compact = false }: ApproachProps) {
   return (
     <section
       id="approach"
@@ -50,22 +54,24 @@ export default function Approach() {
       />
 
       <div className="relative mx-auto max-w-360">
-        <div className="mb-20 flex flex-col gap-6">
-          <MonoLabel>How we engineer</MonoLabel>
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.8, ease: easeOut }}
-            className="font-display font-bold uppercase leading-[0.85] tracking-[-0.02em] text-kanban-text text-[18vw] md:text-[12vw] lg:text-[160px]"
-          >
-            Approach
-          </motion.h2>
-          <p className="max-w-2xl text-base leading-relaxed text-kanban-text/60">
-            Five steps. The difference between a working demo and a system a hospital, ministry, or
-            defense supplier can actually deploy.
-          </p>
-        </div>
+        {!compact && (
+          <div className="mb-20 flex flex-col gap-6">
+            <MonoLabel>How we engineer</MonoLabel>
+            <motion.h2
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.8, ease: easeOut }}
+              className="font-display font-bold uppercase leading-[0.85] tracking-[-0.02em] text-kanban-text text-[18vw] md:text-[12vw] lg:text-[160px]"
+            >
+              Approach
+            </motion.h2>
+            <p className="max-w-2xl text-base leading-relaxed text-kanban-text/60">
+              Five steps. The difference between a working demo and a system a hospital, ministry,
+              or defense supplier can actually deploy.
+            </p>
+          </div>
+        )}
 
         <ol className="flex flex-col">
           {STEPS.map((s, i) => (

@@ -17,7 +17,7 @@ export default function WorkPage() {
         title="Work"
         intro="A small sample of the engagements we have built — and the references that prove the thesis. Full case studies available under NDA."
       />
-      <Work />
+      <Work compact />
       <CTA />
     </>
   );

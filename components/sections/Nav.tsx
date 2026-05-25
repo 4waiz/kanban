@@ -1,6 +1,6 @@
 "use client";
 
-// TODO: replace placeholder logo glyph with the real Kanban Studios mark from /public/logo.png.
+// Logo: /public/logo.svg (Kanban Studios mark).
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -22,24 +22,16 @@ export default function Nav() {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="mx-auto flex h-16 max-w-360 items-center justify-between rounded-full border border-white/10 bg-white/5 px-3 backdrop-blur-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]"
       >
-        {/* logo + wordmark */}
-        <Link href="/" className="flex items-center gap-3 pl-2">
-          <span
-            aria-hidden
-            className="relative grid h-10 w-10 place-items-center overflow-hidden rounded-lg"
-          >
-            <Image
-              src="/logo.png"
-              alt=""
-              width={40}
-              height={40}
-              className="h-10 w-10 object-contain"
-              priority
-            />
-          </span>
-          <span className="font-display text-[17px] font-semibold tracking-tight text-kanban-text">
-            Kanban Studios
-          </span>
+        {/* logo (SVG already includes the wordmark) */}
+        <Link href="/" className="flex items-center pl-2" aria-label="Kanban Studios — home">
+          <Image
+            src="/logo.svg"
+            alt="Kanban Studios"
+            width={220}
+            height={48}
+            className="h-12 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* center links */}

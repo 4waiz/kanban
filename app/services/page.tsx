@@ -17,7 +17,7 @@ export default function ServicesPage() {
         title="Services"
         intro="Five disciplines, each rooted in projects we have already shipped. Each is a credible specialty backed by deployed work, research publications, and competition wins — not marketing claims."
       />
-      <Services />
+      <Services compact />
       <CTA />
     </>
   );

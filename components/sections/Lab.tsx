@@ -28,26 +28,33 @@ const EXPERIMENTS = [
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
-export default function Lab() {
+interface LabProps {
+  compact?: boolean;
+}
+
+export default function Lab({ compact = false }: LabProps) {
   return (
     <section id="lab" className="relative w-full px-8 py-32">
       <div className="mx-auto max-w-360">
-        <div className="mb-16 flex flex-col gap-6">
-          <MonoLabel>R&amp;D arm</MonoLabel>
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.8, ease: easeOut }}
-            className="font-display font-bold uppercase leading-[0.85] tracking-[-0.02em] text-kanban-text text-[18vw] md:text-[12vw] lg:text-[160px]"
-          >
-            Lab
-          </motion.h2>
-          <p className="max-w-2xl text-base leading-relaxed text-kanban-text/60">
-            Kanban Labs is where credibility, talent, and future product seeds come from. Experiments,
-            research collaborations, and open-source contributions that feed the Systems arm.
-          </p>
-        </div>
+        {!compact && (
+          <div className="mb-16 flex flex-col gap-6">
+            <MonoLabel>R&amp;D arm</MonoLabel>
+            <motion.h2
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.8, ease: easeOut }}
+              className="font-display font-bold uppercase leading-[0.85] tracking-[-0.02em] text-kanban-text text-[18vw] md:text-[12vw] lg:text-[160px]"
+            >
+              Lab
+            </motion.h2>
+            <p className="max-w-2xl text-base leading-relaxed text-kanban-text/60">
+              Kanban Labs is where credibility, talent, and future product seeds come from.
+              Experiments, research collaborations, and open-source contributions that feed the
+              Systems arm.
+            </p>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {EXPERIMENTS.map((e, i) => (
@@ -75,14 +82,16 @@ export default function Lab() {
           ))}
         </div>
 
-        <div className="mt-12">
-          <Link
-            href="/lab"
-            className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-kanban-text/70 transition-colors hover:text-kanban-text"
-          >
-            Explore the lab →
-          </Link>
-        </div>
+        {!compact && (
+          <div className="mt-12">
+            <Link
+              href="/lab"
+              className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-kanban-text/70 transition-colors hover:text-kanban-text"
+            >
+              Explore the lab →
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

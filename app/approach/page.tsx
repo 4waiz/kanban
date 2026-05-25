@@ -17,7 +17,7 @@ export default function ApproachPage() {
         title="Approach"
         intro="Map. Architect. Build. Audit. Operate. The difference between a working demo and a system a hospital, ministry, or defense supplier can actually deploy."
       />
-      <Approach />
+      <Approach compact />
       <CTA />
     </>
   );

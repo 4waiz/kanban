@@ -53,21 +53,27 @@ const PROJECTS: Project[] = [
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
-export default function Work() {
+interface WorkProps {
+  compact?: boolean;
+}
+
+export default function Work({ compact = false }: WorkProps) {
   return (
     <section id="work" className="relative w-full px-8 py-32">
       <div className="mx-auto max-w-350">
-        <motion.h2
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.8, ease: easeOut }}
-          className="font-display font-bold uppercase leading-[0.85] tracking-[-0.02em] text-kanban-text text-[18vw] md:text-[12vw] lg:text-[160px]"
-        >
-          Work
-        </motion.h2>
+        {!compact && (
+          <motion.h2
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.8, ease: easeOut }}
+            className="font-display font-bold uppercase leading-[0.85] tracking-[-0.02em] text-kanban-text text-[18vw] md:text-[12vw] lg:text-[160px]"
+          >
+            Work
+          </motion.h2>
+        )}
 
-        <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className={`${compact ? "" : "mt-16"} grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3`}>
           {PROJECTS.map((p, i) => (
             <motion.div
               key={p.title}

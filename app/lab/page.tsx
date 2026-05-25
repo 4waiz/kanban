@@ -17,7 +17,7 @@ export default function LabPage() {
         title="Lab"
         intro="Where credibility, talent attraction, and future product seeds come from. Labs work proves new capabilities that Systems then sells. Systems revenue funds Labs experimentation."
       />
-      <Lab />
+      <Lab compact />
       <CTA />
     </>
   );
