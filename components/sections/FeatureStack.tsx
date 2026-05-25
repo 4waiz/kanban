@@ -46,7 +46,7 @@ const easeOut = [0.16, 1, 0.3, 1] as const;
 
 export default function FeatureStack() {
   return (
-    <section className="relative w-full px-6 py-32 md:px-12">
+    <section className="relative w-full px-6 py-24 md:px-12">
       <div className="mx-auto max-w-360">
         <div className="mb-20 flex flex-col gap-6">
           <MonoLabel>Operating principles</MonoLabel>

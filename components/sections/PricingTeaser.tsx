@@ -31,7 +31,7 @@ const easeOut = [0.16, 1, 0.3, 1] as const;
 
 export default function PricingTeaser() {
   return (
-    <section id="pricing" className="relative w-full px-8 py-32">
+    <section id="pricing" className="relative w-full px-8 py-24">
       <div className="mx-auto max-w-360">
         <div className="mb-16 flex flex-col gap-6">
           <MonoLabel>Engagement model</MonoLabel>

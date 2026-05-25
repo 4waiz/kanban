@@ -34,7 +34,7 @@ interface LabProps {
 
 export default function Lab({ compact = false }: LabProps) {
   return (
-    <section id="lab" className="relative w-full px-8 py-32">
+    <section id="lab" className="relative w-full px-8 py-24">
       <div className="mx-auto max-w-360">
         {!compact && (
           <div className="mb-16 flex flex-col gap-6">

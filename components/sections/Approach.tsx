@@ -59,7 +59,7 @@ export default function Approach({ compact = false }: ApproachProps) {
   return (
     <section
       id="approach"
-      className="relative w-full overflow-hidden border-y border-white/5 px-6 py-32 md:px-12"
+      className="relative w-full overflow-hidden border-y border-white/5 px-6 py-24 md:px-12"
     >
       <div
         aria-hidden

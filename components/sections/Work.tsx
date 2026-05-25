@@ -59,7 +59,7 @@ interface WorkProps {
 
 export default function Work({ compact = false }: WorkProps) {
   return (
-    <section id="work" className="relative w-full px-8 py-32">
+    <section id="work" className="relative w-full px-8 py-24">
       <div className="mx-auto max-w-350">
         {!compact && (
           <motion.h2

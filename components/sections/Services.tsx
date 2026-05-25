@@ -52,7 +52,7 @@ interface ServicesProps {
 
 export default function Services({ compact = false }: ServicesProps) {
   return (
-    <section id="services" className="relative w-full px-8 py-32">
+    <section id="services" className="relative w-full px-8 py-24">
       <div className="mx-auto max-w-360">
         {!compact && (
           <div className="mb-16 flex flex-col gap-6">
