@@ -67,7 +67,7 @@ export default function Work({ compact = false }: WorkProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.8, ease: easeOut }}
-            className="font-display font-bold uppercase leading-[0.85] tracking-[-0.02em] text-kanban-text text-[18vw] md:text-[12vw] lg:text-[160px]"
+            className="font-display font-bold uppercase leading-[0.85] tracking-[-0.02em] text-kanban-text text-[12vw] md:text-[8vw] lg:text-[96px]"
           >
             Work
           </motion.h2>

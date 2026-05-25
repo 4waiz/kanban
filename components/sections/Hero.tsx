@@ -14,15 +14,15 @@ const easeOut = [0.16, 1, 0.3, 1] as const;
 export default function Hero() {
   const [coreOpen, setCoreOpen] = useState(false);
   return (
-    <section className="relative w-full overflow-hidden">
-      <div className="mx-auto grid max-w-360 grid-cols-1 items-center gap-12 px-6 pt-44 pb-32 md:grid-cols-[1.2fr_1fr] md:gap-10 md:px-8 md:pt-48 lg:gap-16">
+    <section className="relative flex min-h-screen w-full items-center overflow-hidden">
+      <div className="mx-auto grid w-full max-w-360 grid-cols-1 items-center gap-8 px-6 pt-28 pb-12 md:grid-cols-[1.2fr_1fr] md:gap-10 md:px-8 md:pt-24 md:pb-12 lg:gap-14">
         {/* LEFT — headline, glass card, CTA */}
-        <div className="flex flex-col items-start gap-8 text-left">
+        <div className="flex flex-col items-start gap-6 text-left">
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: easeOut, delay: 0.1 }}
-            className="font-display font-bold uppercase leading-[0.85] tracking-[-0.02em] text-kanban-text text-[18vw] sm:text-[15vw] md:text-[11vw] lg:text-[160px] xl:text-[180px]"
+            className="font-display font-bold uppercase leading-[0.85] tracking-[-0.02em] text-kanban-text text-[14vw] sm:text-[11vw] md:text-[7.5vw] lg:text-[8vw] xl:text-[112px]"
           >
             <span className="block">Built to</span>
             <span className="block">not fail.</span>
@@ -32,9 +32,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: easeOut, delay: 0.45 }}
-            className="w-full max-w-2xl"
+            className="w-full max-w-xl"
           >
-            <GlassCard className="px-8 py-5">
+            <GlassCard className="px-6 py-4">
               <div className="flex flex-col items-start gap-2">
                 <MonoLabel className="text-kanban-text/80">
                   Mission-critical AI software for regulated and high-stakes environments.
@@ -62,7 +62,7 @@ export default function Hero() {
           transition={{ duration: 1.1, ease: easeOut, delay: 0.2 }}
           className="relative grid w-full place-items-center"
         >
-          <GlassShard3D size={560} variant="spiky" speed={0.7} />
+          <GlassShard3D size={440} variant="spiky" speed={0.7} />
         </motion.div>
       </div>
 
