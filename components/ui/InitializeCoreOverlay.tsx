@@ -77,7 +77,7 @@ export default function InitializeCoreOverlay({ open, onClose }: InitializeCoreO
 
   const handleEnter = () => {
     cancelled.current = true;
-    router.push("/contact");
+    router.push("/services");
     onClose();
   };
 
@@ -172,10 +172,8 @@ export default function InitializeCoreOverlay({ open, onClose }: InitializeCoreO
 
             {/* footer */}
             <div className="flex flex-col items-stretch gap-3 px-6 py-6 sm:flex-row sm:items-center sm:justify-between">
-              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-kanban-text/45">
-                {complete
-                  ? "Channel open. Press enter to file your engagement brief."
-                  : "Standby — provisioning secure intake."}
+              <p className="whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.18em] text-kanban-text/45">
+                {complete ? "Channel open. Press enter." : "Standby — provisioning."}
               </p>
               <button
                 onClick={handleEnter}
