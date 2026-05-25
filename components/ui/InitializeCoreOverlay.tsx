@@ -178,7 +178,7 @@ export default function InitializeCoreOverlay({ open, onClose }: InitializeCoreO
               <button
                 onClick={handleEnter}
                 disabled={!complete}
-                className="inline-flex h-12 items-center justify-center rounded-full bg-kanban-text px-8 font-mono text-[11px] uppercase tracking-[0.22em] text-kanban-bg transition-all hover:bg-white disabled:cursor-not-allowed disabled:bg-white/15 disabled:text-kanban-text/40"
+                className="inline-flex h-12 shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-kanban-text px-8 font-mono text-[11px] uppercase tracking-[0.22em] text-kanban-bg transition-all hover:bg-white disabled:cursor-not-allowed disabled:bg-white/15 disabled:text-kanban-text/40"
               >
                 {complete ? "Enter brief →" : "Initializing…"}
               </button>
