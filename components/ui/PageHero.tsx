@@ -14,7 +14,7 @@ const easeOut = [0.16, 1, 0.3, 1] as const;
 
 export default function PageHero({ eyebrow, title, intro }: PageHeroProps) {
   return (
-    <section className="relative w-full px-8 pt-44 pb-20">
+    <section className="relative w-full px-8 pt-32 pb-16">
       <div className="mx-auto max-w-360">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

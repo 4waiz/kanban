@@ -9,7 +9,7 @@ const easeOut = [0.16, 1, 0.3, 1] as const;
 
 export default function CTA() {
   return (
-    <section className="relative w-full overflow-hidden px-8 pt-20 pb-32">
+    <section className="relative w-full overflow-hidden px-8 pt-16 pb-24">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-60"
