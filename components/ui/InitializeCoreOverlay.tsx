@@ -89,7 +89,7 @@ export default function InitializeCoreOverlay({ open, onClose }: InitializeCoreO
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-[60] grid place-items-center bg-kanban-bg/85 px-6 backdrop-blur-md"
+          className="fixed inset-0 z-60 grid place-items-center bg-kanban-bg/85 px-6 backdrop-blur-md"
           onClick={(e) => {
             // click outside the panel closes
             if (e.target === e.currentTarget) onClose();
@@ -149,7 +149,7 @@ export default function InitializeCoreOverlay({ open, onClose }: InitializeCoreO
                   <span className="text-kanban-violet-soft">›</span>
                   <span>
                     {typed}
-                    <span className="ml-0.5 inline-block h-3.5 w-1.5 -translate-y-px bg-kanban-text/80 align-middle [animation:blink_0.9s_steps(2)_infinite]" />
+                    <span className="ml-0.5 inline-block h-3.5 w-1.5 -translate-y-px bg-kanban-text/80 align-middle animate-[blink_0.9s_steps(2)_infinite]" />
                   </span>
                 </div>
               )}
@@ -159,7 +159,7 @@ export default function InitializeCoreOverlay({ open, onClose }: InitializeCoreO
             <div className="px-6">
               <div className="h-px w-full bg-white/5">
                 <motion.div
-                  className="h-px bg-gradient-to-r from-kanban-violet via-kanban-violet-soft to-pink-300"
+                  className="h-px bg-linear-to-r from-kanban-violet via-kanban-violet-soft to-pink-300"
                   animate={{ width: `${progress}%` }}
                   transition={{ duration: 0.25, ease: "easeOut" }}
                 />
